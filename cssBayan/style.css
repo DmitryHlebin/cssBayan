@@ -1,0 +1,85 @@
+.bayan {
+}
+
+.wrapper {
+  margin: auto;
+  width: 50rem;
+}
+
+.wrapper:hover label {
+  color: black;
+}
+
+.wrapper:hover svg {
+  fill: black;
+}
+
+
+.bayan-item {
+  cursor: pointer;
+  padding: 0.5% 0;
+}
+
+.bayan-item__input{
+  cursor: pointer;
+  display: none;
+}
+
+.bayan-item > span {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+/* cheked */
+
+.bayan-item__input:checked ~ .bayan-item__img {
+  transition: all 0.2s ease-out;
+  display: block;
+}
+.bayan-item__input:checked ~ .bayan-item__title {
+  border: 0.5rem solid grey;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.bayan-item__input:checked ~ span>svg {
+  fill:black;
+  transform: rotate(0deg);
+}
+
+.bayan-item__title {
+  color: rgb(62, 62, 253);
+  cursor: pointer;
+  font-size: 4rem;
+  background-color: rgb(255, 255, 255);
+  font-weight: normal;
+  transition: all 0.2s ease-out;
+}
+
+.bayan-item__img {
+  padding: 1% 0;
+  display: none;
+  transition: all 1s ease-out;
+}
+
+.bayan-item__img:hover{
+  display: block;
+}
+
+.bayan-item__title:hover ~ .bayan-item__img {
+  display: block;
+  transition: all 1s ease-out;
+}
+
+.icon-plus{
+  fill: rgb(62, 62, 253);
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-out;
+}
