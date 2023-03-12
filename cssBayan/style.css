@@ -1,6 +1,6 @@
 .wrapper {
   margin: auto;
-  width: 50rem;
+  width: 55vw;
 }
 
 .bayan-item {
@@ -15,35 +15,40 @@
 
 }
 
-.bayan-item > span {
-  width: 100%;
-  position: relative;
-  display: inline-block;
+.bayan-item__title-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bayan-item__title-wrapper>p{
+  margin: 0;
 }
 
 .bayan-item__title {
   color: rgb(62, 62, 253);
   cursor: pointer;
-  font-size: 4rem;
+  font-size: 3rem;
   background-color: rgb(255, 255, 255);
   font-weight: normal;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .bayan-item__img {
+  display: block;
   padding: 1% 0;
   opacity: 0;
   height: 0;
   transition: all 1s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45vw;
 }
 
 .icon-plus{
   fill: rgb(62, 62, 253);
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  right: 0;
-  bottom: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   transform: rotate(0deg);
   transition: all 1s ease-in-out;
 }
@@ -55,7 +60,8 @@
   opacity: 1;
   height: 100%;
 }
-.bayan-item__title:hover ~ .bayan-item__img {
+
+.bayan-item__title:hover > .bayan-item__img {
   opacity: 1;
   height: 100%;
 }
@@ -72,18 +78,74 @@
 
 /* cheked */
 
-.bayan-item__input:checked ~ .bayan-item__img {
+
+.bayan-item__input:checked ~ .bayan-item__title > .bayan-item__img {
   opacity: 1;
   height: 100%;
 }
 
-.bayan-item__input:checked ~ .bayan-item__title {
-  border: 0.5rem solid grey;
-  border-radius: 0.5rem;
+.bayan-item__input:active ~ .bayan-item__title > .bayan-item__img {
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.bayan-item__input:active ~ .bayan-item__title {
+  color: rgb(62, 62, 253);
+  transition: all 0.3s;
+}
+
+.bayan-item__input:active ~ label > span > svg {
+  fill: rgb(62, 62, 253);
+  transition: all 0.3s;
+}
+
+.bayan-item__input:checked ~ .bayan-item__title > span {
+  background-color: rgb(219, 219, 219);
   font-weight: bold;
   color: black;
 }
-.bayan-item__input:checked ~ span>svg {
+
+.bayan-item__input:checked ~ label > span > svg {
   fill:black;
   transform: rotate(45deg);
+}
+
+
+@media screen and (max-width: 820px) {
+  .bayan-item__title {
+    color: rgb(62, 62, 253);
+    font-size: 2rem;
+  }
+
+  .icon-plus{
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .bayan-item__title:hover > .bayan-item__img {
+    opacity: 0;
+    height: 0;
+  }
+
+  .bayan-item__img:hover{
+    opacity: 0;
+    height: 0;
+  }
+
+  .bayan-item__title-wrapper:hover{
+    border-bottom: 0.1rem solid rgb(219, 219, 219);
+    transition: all 0.5s;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .bayan-item__title {
+    color: rgb(62, 62, 253);
+    font-size: 0.9rem;
+  }
+
+  .icon-plus{
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
