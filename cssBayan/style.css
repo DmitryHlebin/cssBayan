@@ -1,3 +1,5 @@
+/*general layout */
+
 .wrapper {
   margin: auto;
   width: 55vw;
@@ -109,6 +111,9 @@
   fill:black;
   transform: rotate(45deg);
 }
+
+
+/* media query */
 
 @media screen and (max-width: 1280px) {
   .bayan-item__title {
