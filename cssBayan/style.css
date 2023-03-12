@@ -96,7 +96,7 @@
 
 .bayan-item__input:active ~ label > span > svg {
   fill: rgb(62, 62, 253);
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 
 .bayan-item__input:checked ~ .bayan-item__title > span {
